@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tushar - Web Developer Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="hero">
+        <h1>Hello, I'm Tushar</h1>
+        <p>A Web Developer</p>
+    </section>
+    
+    <section id="about">
+        <h2>About Me</h2>
+        <p>
+            I am a passionate web developer with expertise in front-end and back-end technologies. I love building responsive and user-friendly websites and web applications. 
+        </p>
+    </section>
+    
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project">
+            <h3>Project 1: Website Name</h3>
+            <p>Description of the project goes here.</p>
+            <a href="#">View Project</a>
+        </div>
+        <div class="project">
+            <h3>Project 2: Another Project</h3>
+            <p>Description of another project goes here.</p>
+            <a href="#">View Project</a>
+        </div>
+        <!-- Add more projects as needed -->
+    </section>
+    
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>Feel free to get in touch with me. You can reach me at:</p>
+        <p>Email: tushar@example.com</p>
+        <p>LinkedIn: <a href="#">linkedin.com/in/tushar</a></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Tushar - Web Developer</p>
+    </footer>
+
+    <script src="script.js">// script.js
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('header a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+        
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+        
+                window.scrollTo({
+                    top: targetElement.offsetTop,
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Expand and collapse project descriptions
+        document.querySelectorAll('.project').forEach(project => {
+            const description = project.querySelector('p');
+            const toggleButton = document.createElement('button');
+            toggleButton.textContent = 'Toggle Description';
+            toggleButton.classList.add('toggle-button');
+        
+            toggleButton.addEventListener('click', () => {
+                description.classList.toggle('show-description');
+            });
+        
+            project.appendChild(toggleButton);
+        });
+        
+        </script>
+</body>
+</html>
